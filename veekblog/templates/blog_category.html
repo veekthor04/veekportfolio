@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block page_content %}
+  <h3>Categories</h3>
+  <p>
+  <a id="link" href="{% url 'blog_category' 'all'%}">All</a>
+  {% for c in categories %}
+    <a id="link" {% if c.name == category %}class="selected"{% endif %} href="{% url 'blog_category' c.name %}">| {{ c.name }}</a>
+  {% endfor %}
+  </p>
+<div id="main" class="col-md-8 offset-md-2">
+    <h1>{{ category | title }}</h1>
+    <hr>
+    {% for post in posts %}
+        <h2><a id="title" href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+        <small>
+            {{ post.date_created.date }} |&nbsp;
+            <a id="link" href="#">Categories:</a>
+            &nbsp;
+            {% for category in post.categories.all %}
+            <a id="link" href="{% url 'blog_category' category.name %}">
+                {{ category.name }}
+            </a>&nbsp;
+            {% endfor %}
+        </small>
+        <p>{{ post.body | slice:":400" }}...<a id="link" href="{% url 'blog_detail' post.pk%}">continue reading</a></p>
+    {% endfor %}
+</div>
+{% endblock %}
