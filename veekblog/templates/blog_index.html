@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div id="main" class="col-md-8 offset-md-2">
+    <h1>Veek Blog</h1>
+    <hr>
+    {% for post in posts %}
+    <h2><a id="title" href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+    <small>
+        {{ post.date_created.date }} |&nbsp;
+        <a id="link" href="#">Categories:</a>
+        &nbsp;
+        {% for category in post.categories.all %}
+        <a id="link" href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <div id="post">
+    <p>{{ post.body | slice:":150" }}...<a id="link" href="{% url 'blog_detail' post.pk%}">continue reading</a></p>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

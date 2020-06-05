@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form action="/contact/" method="post">
+              {% csrf_token %}
+                <h3>Send a Message to Victor</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name *" value=""  required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="phone" class="form-control" placeholder="Your Phone Number *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="msg" class="form-control" placeholder="Your Message *" style="width: 100%; max-width: 290px; height: 150px;" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="social">
+              <a class="ga" href="https://web.facebook.com/victoradenuga04/" target="_blank"><img id="picw" src="{% static 'img/Facebook.png' %}" alt=""></a>
+              <a class="ga" href="https://twitter.com/veekthor04" target="_blank"><img id="picw" src="{% static 'img/Twitter.png' %}" alt=""></a>
+              <a class="ga" href="https://github.com/veekthor04" target="_blank"><img id="picw" src="{% static 'img/Github.png' %}" alt=""></a>
+              <a class="ga" href="https://www.linkedin.com/in/victor-adenuga-455657117/" target="_blank"><img id="picw" src="{% static 'img/Linkedin.png' %}" alt=""></a>
+            </div>
+</div>
+
+{% endblock %}
