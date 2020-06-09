@@ -8,6 +8,11 @@ html { height: 100%;}
 .nav .open > a:hover,
 .nav .open > a:focus {background-color: transparent;}
 
+.profileBody{
+  min-width: 100%;
+  min-height: 100%;
+  background-color: red !important;
+}
 
 #wrapper {
     padding-left: 0;
@@ -49,7 +54,7 @@ html { height: 100%;}
 
 #page-content-wrapper {
     width: 100%;
-    padding-top: 70px;
+    padding-top: 30px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -315,13 +320,14 @@ img{
   min-height: 400px;
 }
 
-#center{
+.center{
     text-align: center;
     margin-top: 20px;
 }
 
 #profile_pic{
   border-radius:50%;
+  max-width: 300px;
 }
 
 .contact-form{
@@ -400,4 +406,12 @@ br{
 
 .ga:hover {
     opacity: 0.7;
+}
+
+#first{
+  font-size: 40px;
+}
+
+#second{
+  font-size: 16px;
 }

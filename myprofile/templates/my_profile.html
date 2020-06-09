@@ -2,9 +2,12 @@
 {% load static %}
 
 {% block page_content %}
-<div id="center">
+<div class="center">
   <img id="profile_pic" src="{% static 'img/vic.jpg' %}" alt="" width="100%" >
 </div>
-<p id="center">Hello I'm Victor.</p>
-<P>I'm a web developer in training. This website features a collection of my personal and professional projects, mostly from my work as a Flask/ Django developer. My programming skill are Python, HTML & CSS, JavaScript, SQL and C programming language. I'm currently in search of a web developer position to enhance my experience.</p>
+<p id="first" class="center">Hello I'm Victor.</p>
+<P id="second">I'm a web developer in training. This website features a collection of my personal and professional projects, mostly from my work as a Flask/ Django developer. My programming skill are My skills are Python | Django | Flask | SQL | Node.js | JavaScript | SQLAchemy ORM | PostgreSQL | APIs | HTML and CSS | C programming language. I'm open to remote/ full-time web developer roles to enhance my experience.</p>
 {% endblock %}
+
+
+<!-- background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url({% static 'img/pizz.png' %}); -->
