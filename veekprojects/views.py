@@ -3,7 +3,7 @@ from veekprojects.models import Project
 
 # Create your views here.
 def project_index(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by('-last_updated')
     contexts = {
         'projects' : projects
     }
