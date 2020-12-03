@@ -39,7 +39,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-ALLOWED_HOSTS = ['veekportfolio.herokuapp.com','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['veek-employee-app.herokuapp.com','localhost', '127.0.0.1']
 
 
 # Application definition
