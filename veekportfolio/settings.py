@@ -41,7 +41,7 @@ CLOUDINARY_STORAGE = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 MEDIA_URL = '/media/'
 
